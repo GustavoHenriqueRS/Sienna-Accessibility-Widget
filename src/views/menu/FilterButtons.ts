@@ -11,16 +11,8 @@ export default [
         key: 'monochrome',
         icon: monochromeIcon,
     },
-    {
-        label: 'Low Saturation',
-        key: 'low-saturation',
-        icon: lowSaturationIcon,
-    },
-    {
-        label: 'High Saturation',
-        key: 'high-saturation',
-        icon: highSaturationIcon,
-    },
+
+
     {
         label: 'High Contrast',
         key: 'high-contrast',

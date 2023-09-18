@@ -2,8 +2,6 @@
 import template from "./menu.html";
 
 import FilterButtons from "./FilterButtons";
-import ContentButtons from "./ContentButtons";
-import ToolButtons from "../../enum/TOOL_PRESETS";
 
 import renderButtons from "./renderButtons";
 import toggle from "../../utils/toggle";
@@ -15,7 +13,6 @@ import renderFilter from "./renderFilter";
 import translateMenu from "./translateMenu";
 
 import { ILanguage, LANGUAGES } from "../../enum/Languages";
-import { LANGUAGE_DICTIONARY } from "../../enum/Languages";
 
 export interface IRenderMenuArgs {
     container: HTMLElement
@@ -28,8 +25,6 @@ export function renderMenu({
     menu.innerHTML = template;
     const $amount: HTMLDivElement = menu.querySelector(".asw-amount");
 
-    menu.querySelector(".content").innerHTML = renderButtons(ContentButtons);
-    menu.querySelector(".tools").innerHTML = renderButtons(ToolButtons, 'asw-tools');
     menu.querySelector(".contrast").innerHTML = renderButtons(FilterButtons, 'asw-filter');
     $amount.innerText = `${(getState("fontSize") ?? 1) * 100}%`;
 
@@ -52,7 +47,7 @@ export function renderMenu({
             }
 
             fontSize = Math.max(fontSize, 0.1);
-            fontSize = Math.min(fontSize, 2);
+            fontSize = Math.min(fontSize, 1.5);
             fontSize = Number(fontSize.toFixed(2));
 
             adjustFontSize(fontSize);
