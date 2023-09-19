@@ -47,7 +47,7 @@ export function renderMenu({
             }
 
             fontSize = Math.max(fontSize, 0.1);
-            fontSize = Math.min(fontSize, 1.5);
+            fontSize = Math.min(fontSize, 3);
             fontSize = Number(fontSize.toFixed(2));
 
             adjustFontSize(fontSize);
