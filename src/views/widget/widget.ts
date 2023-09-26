@@ -36,13 +36,8 @@ export function renderWidget({
             saveSettings(JSON.parse(settings));
             runAccessibility();
         } else {
-            let lang = document?.querySelector('html')?.getAttribute('lang') ?? "en";
+            let lang = "pt";
 
-            if(LANGUAGE_DICTIONARY[lang]) {
-                lang = lang
-            } else {
-                lang = "en";
-            }
 
             saveSettings({
                 lang

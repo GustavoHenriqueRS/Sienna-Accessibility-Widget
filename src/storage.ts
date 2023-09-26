@@ -2,7 +2,7 @@ import { getCookie, setCookie } from "./utils/cookies";
 import { ISettings } from "./types/ISettings";
 
 const DEFAULT_SETTINGS: ISettings = {
-    lang: 'en',
+    lang: 'pt',
     states: {
         fontSize: 1
     },

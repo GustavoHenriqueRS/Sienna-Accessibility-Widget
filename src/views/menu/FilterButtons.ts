@@ -11,8 +11,6 @@ export default [
         key: 'monochrome',
         icon: monochromeIcon,
     },
-
-
     {
         label: 'High Contrast',
         key: 'high-contrast',

@@ -92,13 +92,11 @@ export function renderMenu({
         reset();
     });
 
-    let $lang: HTMLSelectElement = menu.querySelector("#asw-language");
+    // let $lang: HTMLSelectElement = menu.querySelector("#asw-language");
     let settings = getSettings();
 
-    if ($lang) {
-        $lang.innerHTML = LANGUAGES.map((lang: ILanguage) => `<option value="${lang.code}">${lang.label}</option>`).join('');
 
-        const scriptLang = document?.querySelector("[data-asw-lang]")?.getAttribute("data-asw-lang");
+        const scriptLang = 'pt';
 
         if (scriptLang) {
             saveSettings({
@@ -106,18 +104,8 @@ export function renderMenu({
             });
         }
 
-        $lang.value = scriptLang || settings.lang;
-
-        $lang?.addEventListener("change", () => {
-            saveSettings({
-                lang: $lang.value
-            });
-
-            translateMenu(menu);
-        });
-
         translateMenu(menu);
-    }
+    
 
     if (settings.states) {
         for (let key in settings.states) {
